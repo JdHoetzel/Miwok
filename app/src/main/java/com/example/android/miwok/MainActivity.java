@@ -31,7 +31,62 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
+
+
+    // Find the View that shows the numbers category
+        TextView numbers = (TextView) findViewById(R.id.numbers);
+
+        // Set a click listener on that View
+        numbers.setOnClickListener(new View.OnClickListener() {
+            // The code in this method will be executed when the numbers View is clicked on.
+            @Override
+            public void onClick(View view) {
+                Intent numbersIntent = new Intent(MainActivity.this, NumbersActivity.class);
+                startActivity(numbersIntent);
+            }
+        });
+    // Find the View that shows the Colors category
+        TextView colors = (TextView) findViewById(R.id.colors);
+
+        // Set a click listener on that View
+        colors.setOnClickListener(new View.OnClickListener() {
+            // The code in this method will be executed when the numbers View is clicked on.
+            @Override
+            public void onClick(View view) {
+                Intent colorsIntent = new Intent(MainActivity.this, ColorsActivity.class);
+                startActivity(colorsIntent);
+            }
+        });
+    // Find the View that shows the Family category
+        TextView family = (TextView) findViewById(R.id.family);
+
+        // Set a click listener on that View
+        family.setOnClickListener(new View.OnClickListener() {
+            // The code in this method will be executed when the numbers View is clicked on.
+            @Override
+            public void onClick(View view) {
+                Intent familyIntent = new Intent(MainActivity.this, FamilyActivity.class);
+                startActivity(familyIntent);
+            }
+        });
+    // Find the View that shows the Phrases category
+        TextView phrases = (TextView) findViewById(R.id.phrases);
+
+        // Set a click listener on that View
+        phrases.setOnClickListener(new View.OnClickListener() {
+            // The code in this method will be executed when the numbers View is clicked on.
+            @Override
+            public void onClick(View view) {
+                Intent phrasesIntent = new Intent(MainActivity.this, PhrasesActivity.class);
+                startActivity(phrasesIntent);
+            }
+        });
     }
+
+    /**
+     * Removed whe changing onClick from XML to Java Initiation
+     *
+
     // Change activity view to Numbers activity
     public void gotoNumbersActivity (View view){
         Intent numbersView = new Intent(this, NumbersActivity.class);
@@ -52,5 +107,5 @@ public class MainActivity extends AppCompatActivity {
         Intent numbersView = new Intent(this, PhrasesActivity.class);
         startActivity(numbersView);
     }
-
+*/
 }
