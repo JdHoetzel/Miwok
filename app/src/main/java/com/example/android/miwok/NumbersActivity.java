@@ -18,7 +18,11 @@ package com.example.android.miwok;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -30,27 +34,23 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
 
-        // Create and array list of the english numbers
-        ArrayList<String> numbersEnglish = new ArrayList<String>();
-        numbersEnglish.add("One");
-        numbersEnglish.add("Two");
-        numbersEnglish.add("Three");
-        numbersEnglish.add("Four");
-        numbersEnglish.add("Five");
-        numbersEnglish.add("Six");
-        numbersEnglish.add("Seven");
-        numbersEnglish.add("Eight");
-        numbersEnglish.add("Nine");
-        numbersEnglish.add("Ten");
+        // Create and array list of the Word class number pairs
+        ArrayList<Word> numbersEnglish = new ArrayList<Word>();
+        numbersEnglish.add(new Word("one", "lutti"));
+        numbersEnglish.add(new Word("two", "otiiko"));
+        numbersEnglish.add(new Word("three", "toloookosu"));
+        numbersEnglish.add(new Word("four", "oyyisa"));
+        numbersEnglish.add(new Word("five", "massokka"));
+        numbersEnglish.add(new Word("six", "temmokka"));
+        numbersEnglish.add(new Word("seven", "kenekaku"));
+        numbersEnglish.add(new Word("eight", "kawinta"));
+        numbersEnglish.add(new Word("nine", "wo'e"));
+        numbersEnglish.add(new Word("ten", "na'aacha"));
 
-        LinearLayout rootView = (LinearLayout)findViewById(R.id.rootView);
+        ArrayAdapter<Word> itemsAdapter = new ArrayAdapter<>(this, R.layout.list_item, numbersEnglish);
+        ListView listView = (ListView) findViewById(R.id.list);
+        listView.setAdapter(itemsAdapter);
 
-        // Creates a text view for each word in the numbersEnglish arrayList
-        for (int i = 0; i < numbersEnglish.size(); i++) {
-            TextView txt = new TextView(this);
-            txt.setId(i);
-            txt.setText(numbersEnglish.get(i));
-            rootView.addView(txt);
-        }
+
     }
 }
