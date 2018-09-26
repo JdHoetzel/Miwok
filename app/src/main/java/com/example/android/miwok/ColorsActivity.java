@@ -17,6 +17,9 @@ package com.example.android.miwok;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class ColorsActivity extends AppCompatActivity {
 
@@ -24,5 +27,21 @@ public class ColorsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_colors);
+
+        // Create and array list of the Word class number pairs
+        ArrayList<Word> colorWord = new ArrayList<Word>();
+        colorWord.add(new Word("red", "weṭeṭṭi"));
+        colorWord.add(new Word("green", "chokokki"));
+        colorWord.add(new Word("brown", "ṭakaakki"));
+        colorWord.add(new Word("gray", "ṭopoppi"));
+        colorWord.add(new Word("black", "kululli"));
+        colorWord.add(new Word("white", "kelelli"));
+        colorWord.add(new Word("dusty yellow", "ṭopiisә"));
+        colorWord.add(new Word("mustard yellow", "chiwiiṭә"));
+
+
+        WordAdapter itemsAdapter = new WordAdapter(this, colorWord);
+        ListView listView = (ListView) findViewById(R.id.colorList);
+        listView.setAdapter(itemsAdapter);
     }
 }

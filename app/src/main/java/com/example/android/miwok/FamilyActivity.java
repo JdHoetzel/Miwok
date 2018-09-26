@@ -17,6 +17,9 @@ package com.example.android.miwok;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class FamilyActivity extends AppCompatActivity {
 
@@ -24,5 +27,22 @@ public class FamilyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_family);
+
+        // Create and array list of the Word class number pairs
+        ArrayList<Word> familyWord = new ArrayList<Word>();
+        familyWord.add(new Word("father", "әpә"));
+        familyWord.add(new Word("mother", "әṭa"));
+        familyWord.add(new Word("son", "angsi"));
+        familyWord.add(new Word("daughter", "tune"));
+        familyWord.add(new Word("older brother", "taachi"));
+        familyWord.add(new Word("younger brother", "chalitti"));
+        familyWord.add(new Word("older sister", "teṭe"));
+        familyWord.add(new Word("younger sister", "kolliti"));
+        familyWord.add(new Word("grandmother", "ama"));
+        familyWord.add(new Word("grandfather", "paapa"));
+
+        WordAdapter itemsAdapter = new WordAdapter(this, familyWord);
+        ListView listView = (ListView) findViewById(R.id.familyList);
+        listView.setAdapter(itemsAdapter);
     }
 }

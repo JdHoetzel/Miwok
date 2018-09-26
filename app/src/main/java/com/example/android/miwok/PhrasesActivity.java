@@ -17,6 +17,9 @@ package com.example.android.miwok;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class PhrasesActivity extends AppCompatActivity {
 
@@ -24,5 +27,22 @@ public class PhrasesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phrases);
+
+        // Create and array list of the Word class number pairs
+        ArrayList<Word> phrasesWord = new ArrayList<Word>();
+        phrasesWord.add(new Word("Where are you going?", "minto wuksus"));
+        phrasesWord.add(new Word("What is your name?", "tinnә oyaase'nә"));
+        phrasesWord.add(new Word("My name is...", "oyaaset..."));
+        phrasesWord.add(new Word("How are you feeling?", "michәksәs?"));
+        phrasesWord.add(new Word("I’m feeling good.", "kuchi achit"));
+        phrasesWord.add(new Word("Are you coming?", "әәnәs'aa?"));
+        phrasesWord.add(new Word("Yes, I’m coming.", "hәә’ әәnәm"));
+        phrasesWord.add(new Word("I’m coming.", "әәnәm"));
+        phrasesWord.add(new Word("Let’s go.", "yoowutis"));
+        phrasesWord.add(new Word("Come here.", "әnni'nem"));
+
+        WordAdapter itemsAdapter = new WordAdapter(this, phrasesWord);
+        ListView listView = (ListView) findViewById(R.id.phrasesList);
+        listView.setAdapter(itemsAdapter);
     }
 }

@@ -35,23 +35,20 @@ public class NumbersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_numbers);
 
         // Create and array list of the Word class number pairs
-        ArrayList<Word> numbersEnglish = new ArrayList<Word>();
-        numbersEnglish.add(new Word("one", "lutti"));
-        numbersEnglish.add(new Word("two", "otiiko"));
-        numbersEnglish.add(new Word("three", "toloookosu"));
-        numbersEnglish.add(new Word("four", "oyyisa"));
-        numbersEnglish.add(new Word("five", "massokka"));
-        numbersEnglish.add(new Word("six", "temmokka"));
-        numbersEnglish.add(new Word("seven", "kenekaku"));
-        numbersEnglish.add(new Word("eight", "kawinta"));
-        numbersEnglish.add(new Word("nine", "wo'e"));
-        numbersEnglish.add(new Word("ten", "na'aacha"));
+        ArrayList<Word> numberWord = new ArrayList<Word>();
+        numberWord.add(new Word("one", "lutti"));
+        numberWord.add(new Word("two", "otiiko"));
+        numberWord.add(new Word("three", "toloookosu"));
+        numberWord.add(new Word("four", "oyyisa"));
+        numberWord.add(new Word("five", "massokka"));
+        numberWord.add(new Word("six", "temmokka"));
+        numberWord.add(new Word("seven", "kenekaku"));
+        numberWord.add(new Word("eight", "kawinta"));
+        numberWord.add(new Word("nine", "wo'e"));
+        numberWord.add(new Word("ten", "na'aacha"));
 
-        WordAdapter itemsAdapter = new WordAdapter(this, numbersEnglish);
-        ListView listView = (ListView) findViewById(R.id.list);
+        WordAdapter itemsAdapter = new WordAdapter(this, numberWord);
+        ListView listView = (ListView) findViewById(R.id.numberList);
         listView.setAdapter(itemsAdapter);
-
-
-
     }
 }
